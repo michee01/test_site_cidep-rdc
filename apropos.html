@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CIDEP - Education Permanente</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cidepBlue: '#003399',
+                        cidepRed: '#E30613',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .clip-path-diagonal {
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+          
+    <!--Section Nav-->
+    <nav class="font-sans bg-white text-black sticky top-0 z-50 border-b-gray-200 border-b-2 opacity-100">
+        <div class="container p-2  px-10 mx-auto flex justify-between items-center">
+            
+            <!--div class="text-xl font-bold  pl-4 flex w-32 items-center">
+                <a href="index.html">
+                    <img src="" alt="" loading="lazy" class="h-12 w-auto object-contain"> 
+                </a>
+            </div -->
+            <div class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-blue-800 flex items-center justify-center rounded text-white font-bold text-xl">C</div>
+                <div>
+                    <h1 class="font-bold text-cidepBlue leading-tight">CIDEP</h1>
+                    <p class="text-xs text-cidepRed font-semibold uppercase tracking-widest">Éducation <br> Permanente</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-6 uppercase text-sm font-bold">
+                <a href="index.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Accueil</a>
+                <a href="apropos.html" aria-current="page" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">À propos</a>
+                <a href="formations.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Formations</a>
+                <a href="actualites.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Actualités</a>
+                <a href="revue.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Revue</a>
+                <a href="contact.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 space-x-1 text-xs font-black uppercase tracking-wider">
+                    <a href="?lang=fr" class="bg-green-600 text-white px-2 py-1.5 rounded-full shadow-sm transition"><span class="fi fi-fr"></span> Fr</a>
+                    <a href="?lang=en" class="text-gray-600 hover:bg-black hover:text-white px-2 py-1.5 rounded-full transition duration-300"><span class="fi fi-gb"></span> En</a>
+                </div>
+
+                <button id="menu-toggle" class="md:hidden text-black focus:outline-none p-2">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col space-y-4 uppercase text-xs font-bold border-t border-gray-100 pt-4 pb-2">
+            <a href="index.html" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Accueil</a>
+            <a href="apropos.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">À propos</a>
+            <a href="formations.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Formations</a>
+            <a href="actualites.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Actualités</a>
+            <a href="revue.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Revue</a>
+            <a href="contact.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            // Affiche ou masque le menu mobile
+            mobileMenu.classList.toggle('hidden');
+            
+            // Alterne entre l'icône du hamburger et l'icône de fermeture
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <style> 
+        a[aria-current="page"] {
+            border-bottom: 4px solid black;
+            padding-bottom: 2px;
+            }
+    </style>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-blue-900 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=2000" alt="Campus CIDEP" class="w-full h-full object-cover opacity-30 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-b from-blue-900/50 via-blue-900/80 to-blue-900"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-blue-100 text-sm font-medium mb-8">
+                <span>🎓 Établissement d'Enseignement Supérieur et Universitaire</span>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold text-white mb-8 tracking-tight">
+                Centre Interdisciplinaire pour le <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
+                    Développement et l'Éducation
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed font-light">
+                Façonner les leaders de demain à travers une approche interdisciplinaire et une quête permanente de l'innovation.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-white clip-path-diagonal"></div>
+    </section>
+
+    <!-- Présentation & Histoire -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-red-600 font-bold uppercase tracking-[0.3em] text-xs block">📜 Notre Héritage</span>
+                        <h2 class="text-4xl font-black text-blue-900 leading-tight">
+                            Un engagement historique pour le développement de la nation.
+                        </h2>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            Le <strong>CIDEP</strong> est né d'une volonté farouche de transformer le paysage intellectuel et social. Depuis plus de trois décennies, nous œuvrons pour une éducation qui ne se limite pas aux salles de classe.
+                        </p>
+                        <div class="pl-6 border-l-4 border-red-600 italic text-blue-900 font-medium bg-slate-50 py-4">
+                            "L'éducation n'est pas une préparation à la vie, l'éducation est la vie elle-même." 
+                        </div>
+                        <p>
+                            Aujourd'hui, notre institution se dresse comme un pilier de la recherche interdisciplinaire, favorisant un dialogue constant entre les sciences humaines, techniques et économiques.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <div class="bg-blue-700 p-8 rounded-3xl text-white">
+                            <h4 class="text-3xl mb-2">700+</h4>
+                            <p class="font-bold leading-tight text-xl">Enseignants et chercheur a travers le pays</p>
+                        </div>
+                        <div class="bg-red-600 p-8 rounded-3xl text-white">
+                            <span class="text-5xl font-black opacity-30 block mb-2">30+</span>
+                            <p class="font-bold leading-tight">Années d'impact social et académique</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-red-600 p-8 rounded-3xl text-white">
+                            <span class="text-5xl font-black opacity-30 block mb-2">200+</span>
+                            <p class="font-bold leading-tight">Articles Scientifiques publiés</p>
+                        </div>
+                        <div class="bg-blue-700 p-8 rounded-3xl text-white">
+                            <h4 class="text-3xl mb-2">2500+</h4>
+                            <p class="font-bold leading-tight text-xl">Personnes formées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="glass-card p-12 rounded-[2.5rem] hover:bg-white/10 transition-colors group">
+                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-6">Notre Mission</h3>
+                    <p class="text-blue-100/70 text-lg leading-relaxed">
+                        Le CIDEP s'est donné pour mission de former des cadres hautement qualifiés, capables de répondre aux exigences du développement durable par une approche interdisciplinaire rigoureuse.
+                    </p>
+                </div>
+                <div class="glass-card p-12 rounded-[2.5rem] hover:bg-white/10 transition-colors group">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+                        <span class="text-2xl">👁️</span>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-6">Notre Vision</h3>
+                    <p class="text-blue-100/70 text-lg leading-relaxed">
+                        Nous aspirons à devenir le carrefour de l'innovation intellectuelle en République Démocratique du Congo, en intégrant les technologies de pointe dans nos programmes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-black text-blue-900 mb-16">Nos Valeurs Fondamentales</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <!-- Valeur 1 -->
+                <div class="p-8 bg-slate-50 rounded-3xl border-b-4 border-blue-600">
+                    <div class="text-blue-600 text-3xl mb-4">⭐</div>
+                    <h4 class="text-xl font-black text-blue-900 mb-2">Excellence</h4>
+                    <p class="text-slate-600 text-sm">La quête permanente de la qualité supérieure dans l'enseignement.</p>
+                </div>
+                <!-- Valeur 2 -->
+                <div class="p-8 bg-slate-50 rounded-3xl border-b-4 border-red-600">
+                    <div class="text-red-600 text-3xl mb-4">💡</div>
+                    <h4 class="text-xl font-black text-blue-900 mb-2">Innovation</h4>
+                    <p class="text-slate-600 text-sm">Adapter nos méthodes aux défis technologiques contemporains.</p>
+                </div>
+                <!-- Valeur 3 -->
+                <div class="p-8 bg-slate-50 rounded-3xl border-b-4 border-blue-600">
+                    <div class="text-blue-600 text-3xl mb-4">⚖️</div>
+                    <h4 class="text-xl font-black text-blue-900 mb-2">Discipline</h4>
+                    <p class="text-slate-600 text-sm">La rigueur et l'éthique au cœur de la vie universitaire.</p>
+                </div>
+                <!-- Valeur 4 -->
+                <div class="p-8 bg-slate-50 rounded-3xl border-b-4 border-red-600">
+                    <div class="text-red-600 text-3xl mb-4">🔍</div>
+                    <h4 class="text-xl font-black text-blue-900 mb-2">Recherche</h4>
+                    <p class="text-slate-600 text-sm">Promouvoir la production scientifique pour le développement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-blue-900 mb-4">Le Leadership du CIDEP</h2>
+                <div class="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Membre 1 -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-sm group hover:shadow-2xl transition-all">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Directeur Général" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-black text-blue-900">Prof. Dr. Mohindo</h4>
+                    <p class="text-red-600 text-xs uppercase font-bold">Secrétaire Général</p>
+                </div>
+                <!-- Membre 2 -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-sm group hover:shadow-2xl transition-all">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" alt="Secrétaire Académique" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-black text-blue-900">Prof. Dr. Mitundukidi</h4>
+                    <p class="text-red-600 text-xs uppercase font-bold">Charge des programmes</p>
+                </div>
+                <!-- Membre 3 -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-sm group hover:shadow-2xl transition-all">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Secrétaire Administrative" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-black text-blue-900">C.T Fabiola</h4>
+                    <p class="text-red-600 text-xs uppercase font-bold">Secrétaire Administrative</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions Provinciales -->
+    <section class="bg-gray-50 py-20 mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Titre -->
+            <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-blue-900 mb-4">
+                Nos Directions Provinciales
+            </h2>
+
+            <div class="w-24 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
+
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Notre institution est présente à travers plusieurs provinces du pays
+                afin de garantir une éducation permanente accessible et de qualité.
+            </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-blue-900">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-red-100 flex items-center justify-center rounded-full">
+                    <span class="text-red-600 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Kinshasa
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-red-600">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-blue-100 flex items-center justify-center rounded-full">
+                    <span class="text-blue-900 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Matadi
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-blue-900">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-red-100 flex items-center justify-center rounded-full">
+                    <span class="text-red-600 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Lubumbashi
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-red-600">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-blue-100 flex items-center justify-center rounded-full">
+                    <span class="text-blue-900 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Kikwit
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-blue-900">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-red-100 flex items-center justify-center rounded-full">
+                    <span class="text-red-600 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Kananga
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-red-600">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-blue-100 flex items-center justify-center rounded-full">
+                    <span class="text-blue-900 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Mbuji-Mayi
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-blue-900">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-red-100 flex items-center justify-center rounded-full">
+                    <span class="text-red-600 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Lodja
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-red-600">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-blue-100 flex items-center justify-center rounded-full">
+                    <span class="text-blue-900 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Goma
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            <!-- Card -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border-t-4 border-blue-900">
+                <div class="flex items-center gap-4 mb-4">
+                <div class="w-14 h-14 bg-red-100 flex items-center justify-center rounded-full">
+                    <span class="text-red-600 text-2xl">📍</span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800">
+                    D.P Bukavu
+                </h3>
+                </div>
+
+                <a href="#"
+                class="inline-flex items-center text-blue-900 font-medium hover:text-red-600 transition">
+                Visiter
+                <span class="ml-2">→</span>
+                </a>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="bg-blue-900 rounded-3xl overflow-hidden shadow-2xl">
+
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-10 px-8 py-14 md:px-16">
+
+                <!-- Texte -->
+                <div class="max-w-2xl text-center lg:text-left">
+                
+                <span class="inline-block bg-red-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-5">
+                    Contact & Assistance
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    Vous avez un besoin ?
+                </h2>
+
+                <p class="text-lg text-blue-100 leading-relaxed">
+                    Notre équipe est disponible pour répondre à vos préoccupations, 
+                    vous orienter dans vos démarches académiques et vous fournir 
+                    toutes les informations nécessaires.
+                </p>
+                </div>
+
+                <!-- Bouton -->
+                <div class="flex-shrink-0">
+                <a href="#"
+                    class="inline-flex items-center gap-3 bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-red-600 hover:text-white transition duration-300">
+                    
+                    Nous contacter
+
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="w-5 h-5"
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor">
+                    <path stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-800 flex items-center justify-center rounded text-white font-bold">C</div>
+                        <h4 class="text-white font-bold text-xl">CIDEP</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed">Centre Interdisciplinaire pour le Développement et l'Education Permanente. L'excellence académique à votre service depuis plus de 40 ans.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Liens Rapides</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-cidepRed transition">Accueil</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Nos Formations</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Calendrier Académique</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Portail Étudiant</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-cidepRed"></i>
+                            <span>15, Avenue des Étudiants, <br>Kinshasa / Gombe, RDC</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-cidepRed"></i>
+                            <span>+243 81 000 0000</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-cidepRed"></i>
+                            <span>contact@cidep-univ.org</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                <p>&copy; 2023 CIDEP Institution. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------------------------------------------------------------------->
+
+</body>
+</html>

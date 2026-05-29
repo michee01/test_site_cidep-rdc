@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CIDEP - Education Permanente</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cidepBlue: '#003399',
+                        cidepRed: '#E30613',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .clip-path-diagonal {
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+          
+    <!--Section Nav-->
+    <nav class="font-sans bg-white text-black sticky top-0 z-50 border-b-gray-200 border-b-2 opacity-100">
+        <div class="container p-2  px-10 mx-auto flex justify-between items-center">
+            
+            <!--div class="text-xl font-bold  pl-4 flex w-32 items-center">
+                <a href="index.html">
+                    <img src="" alt="" loading="lazy" class="h-12 w-auto object-contain"> 
+                </a>
+            </div -->
+            <div class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-blue-800 flex items-center justify-center rounded text-white font-bold text-xl">C</div>
+                <div>
+                    <h1 class="font-bold text-cidepBlue leading-tight">CIDEP</h1>
+                    <p class="text-xs text-cidepRed font-semibold uppercase tracking-widest">Éducation <br> Permanente</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-6 uppercase text-sm font-bold">
+                <a href="index.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Accueil</a>
+                <a href="apropos.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">À propos</a>
+                <a href="formations.html" aria-current="page" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Formations</a>
+                <a href="actualites.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Actualités</a>
+                <a href="revue.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Revue</a>
+                <a href="contact.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 space-x-1 text-xs font-black uppercase tracking-wider">
+                    <a href="?lang=fr" class="bg-green-600 text-white px-2 py-1.5 rounded-full shadow-sm transition"><span class="fi fi-fr"></span> Fr</a>
+                    <a href="?lang=en" class="text-gray-600 hover:bg-black hover:text-white px-2 py-1.5 rounded-full transition duration-300"><span class="fi fi-gb"></span> En</a>
+                </div>
+
+                <button id="menu-toggle" class="md:hidden text-black focus:outline-none p-2">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col space-y-4 uppercase text-xs font-bold border-t border-gray-100 pt-4 pb-2">
+            <a href="index.html" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Accueil</a>
+            <a href="apropos.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">À propos</a>
+            <a href="formations.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Formations</a>
+            <a href="actualites.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Actualités</a>
+            <a href="revue.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Revue</a>
+            <a href="contact.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            // Affiche ou masque le menu mobile
+            mobileMenu.classList.toggle('hidden');
+            
+            // Alterne entre l'icône du hamburger et l'icône de fermeture
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <style> 
+        a[aria-current="page"] {
+            border-bottom: 4px solid black;
+            padding-bottom: 2px;
+            }
+    </style>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    
+    <!-- Header Section -->
+    <header class="bg-blue-900 py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover" alt="Étudiants">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Nos Formations</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Découvrez nos programmes académiques et professionnels conçus pour répondre aux standards internationaux et aux besoins du marché.</p>
+        </div>
+    </header>
+
+    <!-- 1. Section BTS -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-4 mb-12">
+            <span class="h-px flex-1 bg-slate-200"></span>
+            <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest px-4">1. Formations BTS</h2>
+            <span class="h-px flex-1 bg-slate-200"></span>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+            <!-- BTS Informatique -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                <div class="md:w-1/3 bg-blue-700 p-8 flex flex-col justify-center text-white">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-2">BTS Informatique</h3>
+                    <p class="text-blue-100 text-sm">Spécialisation Systèmes & Développement</p>
+                </div>
+                <div class="md:w-2/3 p-8 space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                        <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                        <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures réseaux et l'analyse de données complexes.</p>
+                    
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex gap-4">
+                        <button class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Programme</button>
+                        <button class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-50 transition-colors">Postuler</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BTS Management (Exemple supplémentaire) -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                <div class="md:w-1/3 bg-red-600 p-8 flex flex-col justify-center text-white">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-2">BTS Gestion</h3>
+                    <p class="text-red-100 text-sm">Management & Administration</p>
+                </div>
+                <div class="md:w-2/3 p-8 space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                        <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                        <div>Admission : <span class="text-blue-600">Toutes filières</span></div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Apprenez à piloter les ressources humaines, financières et logistiques au sein des organisations modernes.</p>
+                    
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Gestionnaire RH</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Comptable</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Entrepreneur</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex gap-4">
+                        <button class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Programme</button>
+                        <button class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-50 transition-colors">Postuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Section Formations Moyenne Durée -->
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-3xl font-black uppercase tracking-widest mb-4">2. Formations de Moyenne Durée</h2>
+                <div class="w-32 h-1 bg-red-600 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Formation A -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 3 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Maintenance Informatique</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Architecture matériel</li>
+                        <li>• Installation OS</li>
+                        <li>• Dépannage réseau</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+
+                <!-- Formation B -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Gestion des Projets</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Méthodologies (Agile)</li>
+                        <li>• Planification MS Project</li>
+                        <li>• Management d'équipe</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+
+                <!-- Formation C -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 1 An</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Comptabilité Pratique</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Logiciels comptables</li>
+                        <li>• Déclaration fiscale</li>
+                        <li>• Audit interne</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+
+                <!-- Formation D -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Marketing Digital</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Stratégie Social Media</li>
+                        <li>• Référencement SEO</li>
+                        <li>• Publicité Ads</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Section Formations Professionnelles -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest mb-4">3. Formations Professionnelles</h2>
+                    <p class="text-slate-500 font-medium">Apprentissage flexible pour monter rapidement en compétences.</p>
+                </div>
+                <div class="bg-blue-50 px-6 py-3 rounded-2xl border-l-4 border-blue-600">
+                    <span class="text-blue-800 font-bold text-sm">📅 Horaires Flexibles (Jour/Soir/Weekend)</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Accordion Style for Prof. Trainings -->
+                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold">01</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-900">Maintenance et Réseaux</h4>
+                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat de Qualification Professionnelle</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-right">
+                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
+                                <span class="font-bold text-red-600 text-sm">Hardware, Software, Cisco</span>
+                            </div>
+                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl font-bold">02</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-900">Expertise Comptable Pratique</h4>
+                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat de Spécialisation Professionnelle</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-right">
+                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
+                                <span class="font-bold text-red-600 text-sm">SAGE, OHADA, Fiscalité</span>
+                            </div>
+                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold">03</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-blue-900">Marketing & Stratégie Digitale</h4>
+                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat d'Aptitude Professionnelle</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-right">
+                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
+                                <span class="font-bold text-red-600 text-sm">Ads, SEO, Community Mgmt</span>
+                            </div>
+                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-800 flex items-center justify-center rounded text-white font-bold">C</div>
+                        <h4 class="text-white font-bold text-xl">CIDEP</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed">Centre Interdisciplinaire pour le Développement et l'Education Permanente. L'excellence académique à votre service depuis plus de 40 ans.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Liens Rapides</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-cidepRed transition">Accueil</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Nos Formations</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Calendrier Académique</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Portail Étudiant</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-cidepRed"></i>
+                            <span>15, Avenue des Étudiants, <br>Kinshasa / Gombe, RDC</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-cidepRed"></i>
+                            <span>+243 81 000 0000</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-cidepRed"></i>
+                            <span>contact@cidep-univ.org</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                <p>&copy; 2023 CIDEP Institution. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------------------------------------------------------------------->
+
+</body>
+</html>

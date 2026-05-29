@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CIDEP - Education Permanente</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cidepBlue: '#003399',
+                        cidepRed: '#E30613',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-black font-sans">
+        
+    <!--Section Nav-->
+    <nav class="font-sans bg-white text-black sticky top-0 z-50 border-b-gray-200 border-b-2 opacity-100">
+        <div class="container p-2  px-10 mx-auto flex justify-between items-center">
+            
+            <!--div class="text-xl font-bold  pl-4 flex w-32 items-center">
+                <a href="index.html">
+                    <img src="" alt="" loading="lazy" class="h-12 w-auto object-contain"> 
+                </a>
+            </div -->
+            <div class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-blue-800 flex items-center justify-center rounded text-white font-bold text-xl">C</div>
+                <div>
+                    <h1 class="font-bold text-cidepBlue leading-tight">CIDEP</h1>
+                    <p class="text-xs text-cidepRed font-semibold uppercase tracking-widest">Éducation <br> Permanente</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-6 uppercase text-sm font-bold">
+                <a href="index.html" aria-current="page" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Accueil</a>
+                <a href="apropos.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">À propos</a>
+                <a href="formations.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Formations</a>
+                <a href="actualites.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Actualités</a>
+                <a href="revue.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Revue</a>
+                <a href="contact.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center bg-gray-50 border border-gray-200 rounded-full p-1 space-x-1 text-xs font-black uppercase tracking-wider">
+                    <a href="?lang=fr" class="bg-green-600 text-white px-2 py-1.5 rounded-full shadow-sm transition"><span class="fi fi-fr"></span> Fr</a>
+                    <a href="?lang=en" class="text-gray-600 hover:bg-black hover:text-white px-2 py-1.5 rounded-full transition duration-300"><span class="fi fi-gb"></span> En</a>
+                </div>
+
+                <button id="menu-toggle" class="md:hidden text-black focus:outline-none p-2">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col space-y-4 uppercase text-xs font-bold border-t border-gray-100 pt-4 pb-2">
+            <a href="index.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Accueil</a>
+            <a href="apropos.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">À propos</a>
+            <a href="formations.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Formations</a>
+            <a href="actualites.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Actualités</a>
+            <a href="revue.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Revue</a>
+            <a href="contact.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            // Affiche ou masque le menu mobile
+            mobileMenu.classList.toggle('hidden');
+            
+            // Alterne entre l'icône du hamburger et l'icône de fermeture
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <style> 
+        a[aria-current="page"] {
+            border-bottom: 4px solid black;
+            padding-bottom: 2px;
+            }
+    </style>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!--Section Hero-->
+    <section class="relative min-h-[550px] md:min-h-[600px] flex items-center bg-gray-900 text-white py-20 px-4 overflow-hidden">
+        
+        <!-- Slider -->
+        <div id="1" class="absolute inset-0 z-0 overflow-hidden">
+            <div id="hero-slider" class="w-full h-full relative">
+                
+                <!-- Slide 1 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 slide">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Équipe sur le terrain">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div> 
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Nettoyage industriel">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Lutte antiparasitaire">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Catering et restauration">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Approvisionnement">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 slide">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" loading="lazy" class="object-cover w-full h-full" alt="Locaux professionnels">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Texte + CTA -->
+        <div id="2" class="font-mono container mx-auto relative z-10 max-w-6xl">
+            <style>
+                @keyframes zoomInFade {
+                    0% { transform: scale(0.9); opacity: 0; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+                .zoom-in { animation: zoomInFade 1.5s ease forwards; }
+            </style>
+
+            <h1 class="font-poppins text-6xl md:text-6xl text-white max-w-3xl mb-6 leading-tight zoom-in">
+                Former les Leaders de demain grâce à une éducation de qualité.
+            </h1>
+
+            <p class="text-lg md:text-xl text-white max-w-2xl mb-10 p-2 opacity-100 zoom-in">
+                Le Centre Interdisciplinaire pour le Développement et l'Éducation Permanente est le moteur de votre réussite professionnelle en RDC.
+            </p>
+
+            <!-- CTA hiérarchisés -->
+            <div class="flex flex-col md:flex-row gap-4">
+                <a href="contact.html" 
+                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded font-bold uppercase transition transform hover:-translate-y-1 shadow-xl">
+                    Decouvrir nos formations  
+                </a>
+                <a href="https://wa.me/243" 
+                    class="border-2 border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded font-bold uppercase transition transform hover:-translate-y-1 flex items-center gap-2 shadow-xl">
+                    <span>💬</span> Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- Overlay décoratif -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-red-600 opacity-0 skew-x-12 translate-x-1/2 hidden md:block"></div>
+
+        <!-- Indicateurs de slide -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-6 z-20">
+            <!-- Flèche gauche -->
+            <button id="prevSlide" class="text-white hover:text-red-600 transition text-2xl">&#8592;</button>
+            
+            <!-- Points -->
+            <div id="slideIndicators" class="flex gap-2">
+                <!-- Les points seront générés dynamiquement -->
+            </div>
+            
+            <!-- Flèche droite -->
+            <button id="nextSlide" class="text-white hover:text-red-600 transition text-2xl">&#8594;</button>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#hero-slider .slide');
+        const totalSlides = slides.length;
+        const indicators = document.getElementById('slideIndicators');
+
+        // Générer les points
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('w-3','h-3','rounded-full','cursor-pointer');
+            dot.classList.add(i === 0 ? 'bg-white' : 'bg-gray-400');
+            dot.addEventListener('click', () => showSlide(i));
+            indicators.appendChild(dot);
+        }
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('opacity-100');
+            slides[currentSlide].classList.add('opacity-0');
+            indicators.children[currentSlide].classList.remove('bg-white');
+            indicators.children[currentSlide].classList.add('bg-gray-400');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('opacity-100');
+            indicators.children[currentSlide].classList.remove('bg-gray-400');
+            indicators.children[currentSlide].classList.add('bg-white');
+        }
+
+        function nextHeroSlide() {
+            showSlide((currentSlide + 1) % totalSlides);
+        }
+
+        function prevHeroSlide() {
+            showSlide((currentSlide - 1 + totalSlides) % totalSlides);
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', nextHeroSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevHeroSlide);
+
+        // Défilement automatique toutes les 6 secondes
+        setInterval(nextHeroSlide, 5000);
+    </script>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!--Presentation de l'entreprise-->
+    <section class="py-10">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative max-w-4xl mx-auto my-12">
+                <div class="absolute -top-4 -left-4 w-full h-full border-4 border-red-600 z-0 rounded-2xl hidden md:block"></div>
+
+                <div class="relative z-10 bg-gray-200 h-96 flex items-center justify-center text-gray-600 font-bold overflow-hidden rounded-2xl shadow-xl">
+                    
+                    <div id="slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+
+                        <div class="w-full h-full flex-shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="CIDEP" loading="lazy" class="object-cover w-full h-full">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent p-6 text-white">
+                                <p class="font-black text-lg uppercase tracking-tight">CIDEP</p>
+                                <p class="text-xs text-gray-300 font-medium mt-1">Education permanente</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-full flex-shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" alt="BTS/LMD" loading="lazy" class="object-cover w-full h-full">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent p-6 text-white">
+                                <p class="font-black text-lg uppercase tracking-tight">BTS/LMD</p>
+                                <p class="text-xs text-gray-300 font-medium mt-1">Programme de BTS sur 4 trimestres</p>
+                            </div>
+                        </div>         
+
+                        <div class="w-full h-full flex-shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Acquis de l'experience" loading="lazy" class="object-cover w-full h-full">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent p-6 text-white">
+                                <p class="font-black text-lg uppercase tracking-tight">Acquis de l'experience</p>
+                                <p class="text-xs text-gray-300 font-medium mt-1">Reconnaissance des acquis de l'experienceet Certifications.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-red-600 text-white w-10 h-10 flex items-center justify-center rounded-full transition duration-300 backdrop-blur-sm">
+                        &#10094;
+                    </button>
+                    <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-red-600 text-white w-10 h-10 flex items-center justify-center rounded-full transition duration-300 backdrop-blur-sm">
+                        &#10095;
+                    </button>
+
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full">
+                        <button class="w-2.5 h-2.5 rounded-full bg-red-600 focus:outline-none" onclick="goToSlide(0)"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white focus:outline-none" onclick="goToSlide(1)"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-white focus:outline-none" onclick="goToSlide(2)"></button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <style>
+                    @keyframes zoomInFade {
+                        0% {
+                        transform: scale(0.9);
+                        opacity: 0;
+                        }
+                        100% {
+                        transform: scale(1);
+                        opacity: 1;
+                        }
+                    }
+                    /* Classe appliquée au scroll */
+                    .animate-zoom {
+                        animation: zoomInFade 1.2s ease forwards;
+                    }
+                    /* Effet au survol */
+                    .scroll-animate:hover {
+                        transform: scale(1.05);
+                        transition: transform 0.4s ease, opacity 0.4s ease;
+                        opacity: 1;
+                    }
+                </style>
+
+                <h2 class="text-2xl font-bold mb-6 flex items-center scroll-animate">
+                    <span class="w-8 h-px bg-red-600 mr-4"></span>
+                    À propos du CIDEP
+                </h2>
+                <p class="text-lg text-gray-800 leading-relaxed mb-6 italic font-medium text-gray-600 text-justify  scroll-animate">
+                    Fondé en 19.., le Centre Interdisciplinaire pour le Développement et l'Education 
+                    Permanente est une institution spécialisée de l'enseignement supérieur.            
+                </p>
+                <p class="text-lg text-gray-800 leading-relaxed mb-6 text-justify  scroll-animate">
+                    Notre mission est de promouvoir un enseignement de proximité, interdisciplinaire 
+                    et accessible. Nous visons l'excellence par l'innovation pédagogique et le renforcement 
+                    des capacités. Nos domaines couvrent les Sciences de Gestion, le Développement Rural, 
+                    et les Nouvelles Technologies, préparant nos étudiants à devenir des acteurs du changement.            
+                </p>
+
+                <a href="#" class="text-cidepRed font-bold flex items-center pl-4 hover:underline">
+                    Lire plus <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+
+                <script>
+                    // Observer pour déclencher l’animation au scroll
+                    const observ = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-zoom');
+                        } else {
+                            entry.target.classList.remove('animate-zoom'); // rejoue si on ressort/revient
+                        }
+                        });
+                    }, { threshold: 0.2 });
+
+                    document.querySelectorAll('.scroll-animate').forEach(el => {
+                        observ.observe(el);
+                    });
+                </script>
+            </div>
+
+            <script>
+                let currentSlide1 = 0;
+                const slides1 = document.getElementById('slider');
+                const totalSlides1 = 3;
+                const dots = document.querySelectorAll('.absolute.bottom-4 button');
+
+                function updateSlider() {
+                    slides1.style.transform = `translateX(-${currentSlide1 * 100}%)`;
+                    
+                    // Mettre à jour la couleur des petits points (dots)
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide1) {
+                            dot.className = "w-2.5 h-2.5 rounded-full bg-red-600 focus:outline-none";
+                        } else {
+                            dot.className = "w-2.5 h-2.5 rounded-full bg-white focus:outline-none";
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide1 = (currentSlide1 + 1) % totalSlides1;
+                    updateSlider();
+                }
+
+                function prevSlide() {
+                    currentSlide1 = (currentSlide1 - 1 + totalSlides1) % totalSlides1;
+                    updateSlider();
+                }
+
+                function goToSlide(slideIndex) {
+                    currentSlide1 = slideIndex;
+                    updateSlider();
+                }
+
+                document.getElementById('next-btn').addEventListener('click', nextSlide);
+                document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+                // Défilement automatique toutes les 5 secondes (optionnel)
+                setInterval(nextSlide, 5000);
+            </script>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!-- 3. Formations Principales -->
+    <section id="formations" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-cidepBlue mb-12">Nos Offres de Formation</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- BTS -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-xl transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" alt="Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <!--img src="https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&w=500&q=80" alt="BTS" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"-->
+                    </div>
+                    <div class="p-6">
+                        <span class="text-cidepRed font-bold text-sm uppercase">Bac +2</span>
+                        <h4 class="text-xl font-bold my-2">BTS - Brevet de Technicien Supérieur</h4>
+                        <p class="text-gray-600 text-sm mb-4">Formations techniques spécialisées pour une insertion professionnelle immédiate.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-cidepBlue font-semibold"><i class="far fa-clock mr-1"></i> 2 ans</span>
+                            <button class="bg-cidepBlue text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-800">Détails</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Moyenne durée -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-xl transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Formations" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-cidepRed font-bold text-sm uppercase">Certifications</span>
+                        <h4 class="text-xl font-bold my-2">Formations de moyenne durée</h4>
+                        <p class="text-gray-600 text-sm mb-4">Cycles courts pour le renforcement des capacités et le perfectionnement technique.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-cidepBlue font-semibold"><i class="far fa-clock mr-1"></i> 3 à 6 mois</span>
+                            <button class="bg-cidepBlue text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-800">Détails</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professionnelles -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md group hover:shadow-xl transition">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=500&q=80" alt="Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-cidepRed font-bold text-sm uppercase">Professionnel</span>
+                        <h4 class="text-xl font-bold my-2">Formations professionnelles</h4>
+                        <p class="text-gray-600 text-sm mb-4">Programmes sur mesure pour les entreprises et cadres en activité.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-cidepBlue font-semibold"><i class="far fa-clock mr-1"></i> Flexible</span>
+                            <button class="bg-cidepBlue text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-800">Détails</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!-- 3. Domaines de FORMATIONS -->
+    <section id="formations" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-blue-900 mb-4">Nos Domaines de Formation</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Des programmes certifiants et diplômants conçus pour le marché de l'emploi.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Formation 1 -->
+                <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400" alt="BTS Informatique" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <span class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">BTS / LMD</span>
+                        <h3 class="text-xl font-black text-blue-900 mt-4 mb-2">Informatique de Gestion</h3>
+                        <p class="text-slate-500 text-sm mb-6">Maîtrisez les outils de développement et la gestion des systèmes d'information.</p>
+                        <div class="flex justify-between items-center pt-6 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 italic">Durée : 3 ans</span>
+                            <a href="#" class="text-blue-700 font-bold text-xs uppercase tracking-tighter">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Formation 2 -->
+                <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1454165833767-0260ef145b0c?auto=format&fit=crop&q=80&w=400" alt="Management" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <span class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Professionnelle</span>
+                        <h3 class="text-xl font-black text-blue-900 mt-4 mb-2">Management & RH</h3>
+                        <p class="text-slate-500 text-sm mb-6">Développez vos compétences en leadership et gestion des capital humain.</p>
+                        <div class="flex justify-between items-center pt-6 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 italic">Durée : 12-24 mois</span>
+                            <a href="#" class="text-blue-700 font-bold text-xs uppercase tracking-tighter">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Formation 3 -->
+                <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400" alt="Développement" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <span class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Moyenne Durée</span>
+                        <h3 class="text-xl font-black text-blue-900 mt-4 mb-2">Développement Rural</h3>
+                        <p class="text-slate-500 text-sm mb-6">Apprenez à concevoir des projets communautaires à fort impact social.</p>
+                        <div class="flex justify-between items-center pt-6 border-t border-slate-50">
+                            <span class="text-xs font-bold text-slate-400 italic">Durée : 18 mois</span>
+                            <a href="#" class="text-blue-700 font-bold text-xs uppercase tracking-tighter">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------------->
+    
+    <!-- 4. Activités Académiques -->
+    <section id="activites" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-12">
+                <div class="w-full">
+                    <h3 class="text-3xl font-bold text-cidepBlue text-center section-title">Activités Académique</h3>
+                    <p class="mt-4 text-gray-600 text-center">Le savoir en mouvement : nos événements intellectuels.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74dea9f2672?auto=format&fit=crop&w=400&q=80" alt="Conférence" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h5 class="font-bold">Conférences</h5>
+                        <p class="text-xs opacity-80">Experts internationaux</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Atelier" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h5 class="font-bold">Ateliers Pratiques</h5>
+                        <p class="text-xs opacity-80">Apprendre par l'action</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=400&q=80" alt="Matinée" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h5 class="font-bold">Matinées Scientifiques</h5>
+                        <p class="text-xs opacity-80">Débats et recherches</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400&q=80" alt="Séminaire" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h5 class="font-bold">Séminaires</h5>
+                        <p class="text-xs opacity-80">Échanges et networking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------------->
+
+    <!-- 5. Actualités -->
+    <section id="actualites" class="py-20 bg-gray-50 border-t">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-cidepBlue mb-12">Dernières Actualités</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white border rounded shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1507537297325-582ff69c9721?auto=format&fit=crop&w=500&q=80" alt="Soutenance" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="text-cidepRed text-xs font-bold mb-2">12 OCTOBRE 2023</div>
+                        <h4 class="font-bold mb-3 hover:text-cidepBlue cursor-pointer">Cérémonie solennelle de soutenance des mémoires de fin de cycle</h4>
+                        <p class="text-gray-600 text-sm">Plus de 200 étudiants ont défendu leurs travaux avec brio cette semaine...</p>
+                    </div>
+                </article>
+                <article class="bg-white border rounded shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Cours" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="text-cidepRed text-xs font-bold mb-2">05 OCTOBRE 2023</div>
+                        <h4 class="font-bold mb-3 hover:text-cidepBlue cursor-pointer">Lancement de la nouvelle filière en Intelligence Artificielle</h4>
+                        <p class="text-gray-600 text-sm">Le CIDEP s'adapte aux technologies futures en ouvrant un département dédié à l'IA...</p>
+                    </div>
+                </article>
+                <article class="bg-white border rounded shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=500&q=80" alt="Partenariat" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="text-cidepRed text-xs font-bold mb-2">28 SEPTEMBRE 2023</div>
+                        <h4 class="font-bold mb-3 hover:text-cidepBlue cursor-pointer">Partenariat stratégique avec les leaders de l'industrie locale</h4>
+                        <p class="text-gray-600 text-sm">Signature d'un accord pour faciliter les stages professionnels de nos étudiants...</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------------------------------------------------------------------------------------->
+    
+    <!-- 6. Témoignages -->
+    <section class="py-20 bg-cidepBlue text-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-16">Ils parlent du CIDEP</h3>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="bg-blue-900/50 p-8 rounded-lg relative">
+                    <i class="fas fa-quote-right absolute top-4 right-4 text-3xl opacity-20"></i>
+                    <p class="italic mb-6 text-blue-100">"Le CIDEP m'a donné les outils pratiques pour réussir mon entrepreneuriat. L'approche interdisciplinaire est une force incroyable."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h5 class="font-bold">Jean Mukendi</h5>
+                            <p class="text-xs opacity-75 text-white">Ancien étudiant / CEO Tech243</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-900/50 p-8 rounded-lg relative">
+                    <i class="fas fa-quote-right absolute top-4 right-4 text-3xl opacity-20"></i>
+                    <p class="italic mb-6 text-blue-100">"En tant que partenaire, nous apprécions la qualité de la formation. Les stagiaires du CIDEP sont déjà opérationnels dès leur arrivée."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h5 class="font-bold">Sarah Kabeya</h5>
+                            <p class="text-xs opacity-75 text-white">Directrice RH / TMB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-900/50 p-8 rounded-lg relative">
+                    <i class="fas fa-quote-right absolute top-4 right-4 text-3xl opacity-20"></i>
+                    <p class="italic mb-6 text-blue-100">"L'ambiance académique et le soutien des professeurs m'ont permis de dépasser mes limites. Je recommande vivement cette institution."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h5 class="font-bold">Marcello Kalonji</h5>
+                            <p class="text-xs opacity-75 text-white">Étudiant en 2ème BTS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------------------------------------------------------------------------------------->
+    
+    <!-- 7. Appel à l'action -->
+    <section id="inscription" class="py-20 bg-cidepRed text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-4xl font-extrabold mb-6">Rejoignez-nous dès maintenant !</h3>
+            <p class="text-xl mb-10 opacity-90">
+                Les inscriptions pour l'année académique 2026-2027 sont ouvertes pour le BTS. <br>
+                Les inscriptions pour les autres formations sont ouvertes toute l'année. 
+            </p>
+            <a href="#" class="bg-white text-cidepRed px-12 py-4 rounded-full font-extrabold text-lg hover:bg-gray-100 transition shadow-xl transform hover:scale-105 inline-block">S'inscrire maintenant</a>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------------->
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-blue-800 flex items-center justify-center rounded text-white font-bold">C</div>
+                        <h4 class="text-white font-bold text-xl">CIDEP</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed">Centre Interdisciplinaire pour le Développement et l'Education Permanente. L'excellence académique à votre service depuis plus de 40 ans.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Liens Rapides</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-cidepRed transition">Accueil</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Nos Formations</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Calendrier Académique</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Portail Étudiant</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-cidepRed"></i>
+                            <span>15, Avenue des Mandariniers, <br>Kinshasa / Gombe, RDC</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-cidepRed"></i>
+                            <span>+243 81 000 0000</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-cidepRed"></i>
+                            <span>contact@cidep-rdc.cd</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cidepBlue transition text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                <p>&copy; 2023 CIDEP Institution. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------------------------------------------------------------------->
+
+</body>
+</html>
