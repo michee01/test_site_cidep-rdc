@@ -57,7 +57,7 @@
                 <a href="index.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Accueil</a>
                 <a href="apropos.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">À propos</a>
                 <a href="formations.html" aria-current="page" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Formations</a>
-                <a href="actualites.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Actualités</a>
+                <a href="activites.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Activités</a>
                 <a href="revue.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Revue</a>
                 <a href="contact.html" class="hover:text-red-600 font-bold hover:px-2 hover:border-b-4 hover:border-red-600 transition">Contact</a>
             </div>
@@ -83,7 +83,7 @@
             <a href="index.html" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Accueil</a>
             <a href="apropos.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">À propos</a>
             <a href="formations.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Formations</a>
-            <a href="actualites.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Actualités</a>
+            <a href="activites.html" aria-current="page" class="hover:text-red-600 transition pl-4 border-l-4 border-red-600">Activités</a>
             <a href="revue.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Revue</a>
             <a href="contact.html" class="hover:text-red-600 transition pl-4 border-l-4 border-transparent hover:border-red-600">Contact</a>
         </div>
@@ -122,143 +122,553 @@
             <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Nos Formations</h1>
             <p class="text-xl text-blue-100 max-w-2xl mx-auto">Découvrez nos programmes académiques et professionnels conçus pour répondre aux standards internationaux et aux besoins du marché.</p>
         </div>
+        
     </header>
 
-    <!-- 1. Section BTS -->
-    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-4 mb-12">
-            <span class="h-px flex-1 bg-slate-200"></span>
-            <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest px-4">1. Formations BTS</h2>
-            <span class="h-px flex-1 bg-slate-200"></span>
-        </div>
+    <!--Type des formations-->
+    <section class="bg-gray- pb-20">
+        <div>            
+            <h4 class="text-center pt-10 mb-10 text-gray-700 uppercase text-3xl font-bold">Type des formations</h4>
+            <div class="flex w-[100%] justify-center mt-4 mx-auto ">
+                <div class="grid grid-cols-2 grap-4 text-center space-x-8 ">
+                    <div class="group p-4 bg-blue-800 rounded-2xl text-white hover:bg-red-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <a href="#rc" class="font-semibold p-1 group-hover:border-b-2 border-gray-200">Renforcement des capacites</a>
+                    </div>
+                    <div class="group p-4 bg-blue-800 rounded-2xl text-white hover:bg-red-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <a href="#cts&bts" class="font-semibold p-1 group-hover:border-b-2 border-gray-200">CTS & BTS</a>
+                    </div>
+                </div>  
+            </div>
+        </div>     
+    </section>
 
-        <div class="grid lg:grid-cols-2 gap-10">
-            <!-- BTS Informatique -->
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
-                <div class="md:w-1/3 bg-blue-700 p-8 flex flex-col justify-center text-white">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="text-2xl font-bold mb-2">BTS Informatique</h3>
-                    <p class="text-blue-100 text-sm">Spécialisation Systèmes & Développement</p>
+    <!-- 1. Section Renforcement des capacites -->
+    <section id="rc" class="pb-24 pt-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest mb-4">
+                        1. Renforcement des capacités
+                    </h2>
+                    <p class="text-slate-500 font-medium">
+                        Apprentissage flexible pour monter rapidement en compétences.
+                    </p>
                 </div>
-                <div class="md:w-2/3 p-8 space-y-4">
-                    <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-                        <div>Durée : <span class="text-red-600">2 Ans</span></div>
-                        <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed">Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures réseaux et l'analyse de données complexes.</p>
-                    
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 flex gap-4">
-                        <button class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Programme</button>
-                        <button class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-50 transition-colors">Postuler</button>
-                    </div>
+                <div class="bg-blue-50 px-6 py-3 rounded-2xl border-l-4 border-blue-600">
+                    <span class="text-blue-800 font-bold text-sm">📅 Horaires Flexibles (Jour/Soir/Weekend)</span>
                 </div>
             </div>
-
-            <!-- BTS Management (Exemple supplémentaire) -->
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
-                <div class="md:w-1/3 bg-red-600 p-8 flex flex-col justify-center text-white">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-2xl font-bold mb-2">BTS Gestion</h3>
-                    <p class="text-red-100 text-sm">Management & Administration</p>
-                </div>
-                <div class="md:w-2/3 p-8 space-y-4">
-                    <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
-                        <div>Durée : <span class="text-red-600">2 Ans</span></div>
-                        <div>Admission : <span class="text-blue-600">Toutes filières</span></div>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed">Apprenez à piloter les ressources humaines, financières et logistiques au sein des organisations modernes.</p>
-                    
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Gestionnaire RH</span>
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Comptable</span>
-                            <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Entrepreneur</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Formation 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center">
+                            Formation mobile
+                        </h3>
+                        <div class=" p-1 space-y-2">
+                            <div class="grid grid-cols-2 gap-4 mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <div>Durée : <span class="text-red-600">Flexible</span></div>
+                                <div>Critère : <span class="text-blue-600">Aucun</span></div>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                                Nous mettons à votre disposition des enseignants de qualité pour vos formations de 
+                                Renforcement des capacités au sien de vos installations en dehors de nos campus.
+                            </p>                            
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-blue-900 text-sm uppercase italic">Qualification : </h4>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Brevet</span>
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Certificat</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex gap-4">
+                                <a href="" class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Nous contacter</a>
+                                <a href="" class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition-colors">S'inscrire</a>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="pt-4 flex gap-4">
-                        <button class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Programme</button>
-                        <button class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-50 transition-colors">Postuler</button>
+                <!-- Formation 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                            Formation sur Campus
+                        </h3>
+                        <div class=" p-1 space-y-2">
+                            <div class="grid grid-cols-2 gap-4 mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <div>Durée : <span class="text-red-600">Flexible</span></div>
+                                <div>Critère : <span class="text-blue-600">Aucun</span></div>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                                Nous organisons des formations de courte durée dans diverses domaines disponible dans le système LMD en RDC
+                            </p>                                                 
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-blue-900 text-sm uppercase italic">Qualification : </h4>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Brevet</span>
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Certificat</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex gap-4">
+                                <a href="#formation-C-D" class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Voir plus</a>
+                                <a href="" class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition-colors">S'inscrire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                            Formation sur mesure
+                        </h3>
+                        <div class=" p-1 space-y-2">
+                            <div class="grid grid-cols-2 gap-4 mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                <div>Durée : <span class="text-red-600">Flexible</span></div>
+                                <div>Critère : <span class="text-blue-600">Aucun</span></div>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                                Grâce à nos excellents enseignants, nous sommes disponible pour receuillir vos besoins specifique et 
+                                concevoir des modules de formations adaptés à vos besoins.
+                            </p>                              
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-blue-900 text-sm uppercase italic">Qualification : </h4>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Brevet</span>
+                                    <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Certificat</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex gap-4">
+                                <a href="" class="bg-blue-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Nous contacter</a>
+                                <a href="" class="border-2 border-red-600 text-red-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition-colors">S'inscrire</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Section Formations Moyenne Durée -->
-    <section class="py-24 bg-slate-900 text-white">
+    <!-- 2. Section CTS
+    <section id="cts" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16">
-                <h2 class="text-3xl font-black uppercase tracking-widest mb-4">2. Formations de Moyenne Durée</h2>
+            <div class="mb-12">
+                <h2 class="text-3xl font-black uppercase tracking-widest mb-4">2. CTS - Certificat de Technicien Supérieur</h2>
+                <div class="w-32 h-1 bg-red-600 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 Formation 1 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Sciences de Gestion</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Comptabilité</li>
+                        <li>• Micro-finance, banque et assurance</li>
+                        <li>• Marketing - Management</li>
+                        <li>• Gestion des ressources humaines</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+
+                 Formation 2 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Sciences Informatique</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Développement logiciel</li>
+                        <li>• Réseaux Informatique</li>
+                        <li>• Marketing Digital</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+
+                 Formation 3 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Lettres, Langues et Arts</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Langue des signes</li>
+                        <li>• Correspondance Administrative</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+
+                 Formation 4 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Sciences Juridiques, Politiques et Administratives</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Sciences Juridiques</li>
+                        <li>• Sciences Politiques et Administratives</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+                
+                 Formation 5 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Sciences de la Santé</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Sciences Infirmières</li>
+                        <li>• Sage-femme</li>
+                        <li>• Toxicologie</li>
+                        <li>• Santé communautaire</li>
+                        <li>• Santé publique</li>
+                        <li>• Hygiène et sécurité au travail</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+
+                 Formation 6 
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 à 12 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Sciences Agronomiques et Environnement</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Sciences environnementales</li>
+                        <li>• Sciences du développement</li>
+                    </ul>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <a href="" class="text-red-500 font-bold text-sm hover:underline">S'inscrire</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+ -->
+    
+    <!-- 3. Section CTS et BTS -->
+    <section id="cts&bts" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10">
+        <div class="flex items-center gap-4 mb-4">
+            <span class="h-px flex-1 bg-slate-400"></span>
+            <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest px-4">2. CTS & 3. BTS</h2>
+            <span class="h-px flex-1 bg-slate-400"></span>
+        </div>
+            <p class="text-xl text-center text-blue-900  font-black uppercase tracking-widest mb-4"> Certificat et Brevet de Technicien Supérieur</p>            
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Formation 1 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        📊 Sciences de Gestion
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">1, 2 ou 4 semestres</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                            
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 2 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        💻 Informatique
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                        
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 3 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        🎨 Lettres, Langues et Arts
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                            
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 4 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        ⚖️ Sciences Juridiques, Politiques et Administratives
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                            
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 5 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        🏥 Sciences de la Santé
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                            
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 6 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div class="p-8">
+                    <h3 class="text-2xl text-center font-extrabold text-blue-900 mb-4 flex items-center gap-2">
+                        🌱 Sciences Agronomiques et Environnement
+                    </h3>
+                    <div class=" p-1 space-y-2">
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <div>Durée : <span class="text-red-600">2 Ans</span></div>
+                            <div>Admission : <span class="text-blue-600">Diplôme d'État</span></div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formation axée sur la maîtrise des outils de programmation, la gestion des infrastructures 
+                            réseaux et l'analyse de données complexes.
+                        </p>                            
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-blue-900 text-sm uppercase italic">Débouchés :</h4>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Développeur</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Admin Réseau</span>
+                                <span class="bg-slate-100 px-3 py-1 rounded-full text-slate-700">• Analyste Système</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 flex gap-4 ">
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription CTS</a>
+                            <a href="" class="bg-blue-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-600 transition-colors">Inscription BTS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <!-- 4. Section Formation  de courte durée -->
+    <section id="formation-C-D" class="py-20 mb-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <h2 class="text-3xl font-black uppercase tracking-widest mb-4">Formation de courte durée</h2>
                 <div class="w-32 h-1 bg-red-600 rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Formation A -->
+                <!-- Formation 1 -->
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 3 Mois</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Programmation Python</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• les bases de python</li>
+                        <li>• Développement Desktop</li>
+                        <li>• Développement web</li>
+                    </ul>
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+                <!-- Formation 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">Administration réseaux Informatique</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Adressage IP</li>
+                        <li>• Switching</li>
+                        <li>• Routing</li>
+                    </ul>
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+                <!-- Formation 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
                     <h4 class="text-xl font-bold mb-4 text-blue-300">Maintenance Informatique</h4>
                     <ul class="text-sm text-slate-400 space-y-3 mb-8">
                         <li>• Architecture matériel</li>
                         <li>• Installation OS</li>
                         <li>• Dépannage réseau</li>
                     </ul>
-                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
                         <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
                         <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
                     </div>
                 </div>
-
-                <!-- Formation B -->
+                <!-- Formation 4 -->
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 Mois</span>
                     <h4 class="text-xl font-bold mb-4 text-blue-300">Gestion des Projets</h4>
                     <ul class="text-sm text-slate-400 space-y-3 mb-8">
                         <li>• Méthodologies (Agile)</li>
                         <li>• Planification MS Project</li>
                         <li>• Management d'équipe</li>
                     </ul>
-                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
                         <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
                         <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
                     </div>
                 </div>
 
-                <!-- Formation C -->
+                <!-- Formation 5 -->
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 1 An</span>
+                    <h4 class="text-xl font-bold mb-4 text-blue-300">MS Office</h4>
+                    <ul class="text-sm text-slate-400 space-y-3 mb-8">
+                        <li>• Word</li>
+                        <li>• Excel</li>
+                        <li>• PowerPoint</li>
+                    </ul>
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
+                        <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
+                    </div>
+                </div>
+
+                <!-- Formation 6 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
                     <h4 class="text-xl font-bold mb-4 text-blue-300">Comptabilité Pratique</h4>
                     <ul class="text-sm text-slate-400 space-y-3 mb-8">
                         <li>• Logiciels comptables</li>
                         <li>• Déclaration fiscale</li>
                         <li>• Audit interne</li>
                     </ul>
-                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
                         <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
                         <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
                     </div>
                 </div>
 
-                <!-- Formation D -->
+                <!-- Formation 7 -->
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-                    <span class="text-red-500 font-bold block mb-4 text-xs uppercase tracking-widest">Durée : 6 Mois</span>
                     <h4 class="text-xl font-bold mb-4 text-blue-300">Marketing Digital</h4>
                     <ul class="text-sm text-slate-400 space-y-3 mb-8">
                         <li>• Stratégie Social Media</li>
                         <li>• Référencement SEO</li>
                         <li>• Publicité Ads</li>
                     </ul>
-                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span class="text-red-500 mr-4 font-bold mb-4 text-xs tracking-widest">Durée : 3 Mois</span>
+                    <span class="text-slate-400 font-bold mb-4 text-xs tracking-widest">Prix : 50$</span>
+                    <div class="pt-4 mt-2 border-t border-white/10 flex justify-between items-center">
                         <span class="text-[10px] font-bold text-slate-500">📜 CERTIFICAT DÉLIVRÉ</span>
                         <button class="text-red-500 font-bold text-sm hover:underline">S'inscrire</button>
                     </div>
@@ -266,82 +676,32 @@
             </div>
         </div>
     </section>
-
-    <!-- 3. Section Formations Professionnelles -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <h2 class="text-3xl font-black text-blue-900 uppercase tracking-widest mb-4">3. Formations Professionnelles</h2>
-                    <p class="text-slate-500 font-medium">Apprentissage flexible pour monter rapidement en compétences.</p>
-                </div>
-                <div class="bg-blue-50 px-6 py-3 rounded-2xl border-l-4 border-blue-600">
-                    <span class="text-blue-800 font-bold text-sm">📅 Horaires Flexibles (Jour/Soir/Weekend)</span>
-                </div>
+        
+    <!-- Section CTA  -->
+    <section class="mb-20 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 py-16">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <!-- Texte -->
+            <div class="mb-8">
+            <h3 class="text-3xl font-extrabold text-white mb-4">
+                🚀 Rejoignez nos programmes de formation
+            </h3>
+            <p class="text-blue-100 font-semibold text-lg">
+                Développez vos compétences et ouvrez de nouvelles opportunités grâce à nos formations spécialisées.
+            </p>
             </div>
-
-            <div class="space-y-4">
-                <!-- Accordion Style for Prof. Trainings -->
-                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold">01</div>
-                            <div>
-                                <h4 class="text-xl font-bold text-blue-900">Maintenance et Réseaux</h4>
-                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat de Qualification Professionnelle</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-right">
-                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
-                                <span class="font-bold text-red-600 text-sm">Hardware, Software, Cisco</span>
-                            </div>
-                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl font-bold">02</div>
-                            <div>
-                                <h4 class="text-xl font-bold text-blue-900">Expertise Comptable Pratique</h4>
-                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat de Spécialisation Professionnelle</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-right">
-                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
-                                <span class="font-bold text-red-600 text-sm">SAGE, OHADA, Fiscalité</span>
-                            </div>
-                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group border border-slate-100 rounded-3xl p-6 hover:shadow-lg transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold">03</div>
-                            <div>
-                                <h4 class="text-xl font-bold text-blue-900">Marketing & Stratégie Digitale</h4>
-                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">Certificat d'Aptitude Professionnelle</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-right">
-                                <span class="block text-xs font-bold text-slate-400 uppercase">Modules</span>
-                                <span class="font-bold text-red-600 text-sm">Ads, SEO, Community Mgmt</span>
-                            </div>
-                            <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Boutons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" 
+                class="bg-white text-blue-900 font-bold px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition">
+                Nos formations
+            </a>
+            <a href="#contact" 
+                class="bg-blue-800 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-blue-900 transition">
+                Nous contacter
+            </a>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="bg-black text-gray-400 pt-16 pb-8 border-t border-gray-800">
@@ -362,7 +722,7 @@
                     <ul class="space-y-4 text-sm">
                         <li><a href="#" class="hover:text-cidepRed transition">Accueil</a></li>
                         <li><a href="#" class="hover:text-cidepRed transition">A propos</a></li>
-                        <li><a href="#" class="hover:text-cidepRed transition">Actualités</a></li>
+                        <li><a href="#" class="hover:text-cidepRed transition">Activités</a></li>
                         <li><a href="#" class="hover:text-cidepRed transition">Revue</a></li>
                         <li><a href="#" class="hover:text-cidepRed transition">Contact</a></li>
                     </ul>
